@@ -1,13 +1,13 @@
 {
-    "author": "Josh.5",
+    "author": "Ezruneko,
     "compatibility": [
         1,
         2
     ],
-    "description": "Ensure all video streams are encoded with the H265/HEVC codec using the hevc_vaapi encoder.",
-    "icon": "https://raw.githubusercontent.com/Josh5/unmanic.plugin.encoder_video_hevc_vaapi/master/icon.png",
-    "id": "encoder_video_hevc_vaapi",
-    "name": "Video Encoder H265/HEVC - hevc_vaapi (INTEL/AMD)",
+    "description": "Ensure all video streams are encoded with the H264 codec using the hevc_vaapi encoder.",
+    "icon": "https://raw.githubusercontent.com/ezruneko/unmanic.plugin.encoder_video_h264_vaapi/master/icon.png",
+    "id": "encoder_video_h264_vaapi",
+    "name": "Video Encoder H264 - h264_vaapi (INTEL/AMD)",
     "platform": [
         "all"
     ],
@@ -16,5 +16,5 @@
         "on_worker_process": 0
     },
     "tags": "video,encoder,ffmpeg,intel,amd,library file test",
-    "version": "0.0.7"
+    "version": "0.0.1"
 }

@@ -4,11 +4,12 @@
 """
     plugins.plugin.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
-    Date:                     12 Aug 2021, (6:08 PM)
+    Written by:               Ezruneko <andrashe@gmail.com>
+    Date:                     26 Sept 2022, (4:56 PM)
 
     Copyright:
-        Copyright (C) 2021 Josh Sunnex
+        Copyright (C) 2022 Ezruneko
+        Copyright (C) 2022 Ezruneko
 
         This program is free software: you can redistribute it and/or modify it under the terms of the GNU General
         Public License as published by the Free Software Foundation, version 3.
@@ -185,17 +186,17 @@ class PluginStreamMapper(StreamMapper):
     def test_stream_needs_processing(self, stream_info: dict):
         if stream_info.get('codec_name').lower() in self.image_video_codecs:
             return False
-        elif stream_info.get('codec_name').lower() in ['h265', 'hevc']:
+        elif stream_info.get('codec_name').lower() in ['h264']:
             return False
         return True
 
     def custom_stream_mapping(self, stream_info: dict, stream_id: int):
         if self.settings.get_setting('advanced'):
-            stream_encoding = ['-c:v:{}'.format(stream_id), 'hevc_vaapi']
+            stream_encoding = ['-c:v:{}'.format(stream_id), 'h264_vaapi']
             stream_encoding += self.settings.get_setting('custom_options').split()
         else:
             stream_encoding = [
-                '-c:v:{}'.format(stream_id), 'hevc_vaapi',
+                '-c:v:{}'.format(stream_id), 'h264_vaapi',
             ]
 
         return {
